@@ -32,18 +32,21 @@ class ViewController: UIViewController {
         redSlider.minimumValue = 0
         redSlider.maximumValue = 1
         redSlider.tintColor = .red
+        redSlider.value = 0
         
         greenSlider.minimumValue = 0
         greenSlider.maximumValue = 1
         greenSlider.tintColor = .green
+        greenSlider.value = 0
         
         blueSlider.minimumValue = 0
         blueSlider.maximumValue = 1
         blueSlider.tintColor = .blue
+        blueSlider.value = 0
         
-        currentRed.text = String(redSlider.value)
-        currentGreen.text = String(greenSlider.value)
-        currentBlue.text = String(blueSlider.value)
+        currentRed.text = String(round(redSlider.value * 100) / 100.0)
+        currentGreen.text = String(round(greenSlider.value * 100) / 100.0)
+        currentBlue.text = String(round(blueSlider.value * 100) / 100.0)
         
         view.backgroundColor = .lightGray
     }
@@ -57,16 +60,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func redCurrentValue() {
-        currentRed.text = String(redSlider.value)
+        currentRed.text = String(round(redSlider.value * 100) / 100.0)
     }
     
     @IBAction func greenCurrentValue() {
-        currentGreen.text = String(greenSlider.value)
-        
+        currentGreen.text = String(round(greenSlider.value * 100) / 100.0)
     }
     
     @IBAction func blueCurrentValue() {
-        currentBlue.text = String(blueSlider.value)
+        currentBlue.text = String(round(blueSlider.value * 100) / 100.0)
     }
     
 }
