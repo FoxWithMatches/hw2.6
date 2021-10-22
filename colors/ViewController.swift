@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         currentGreen.text = String(round(greenSlider.value * 100) / 100.0)
         currentBlue.text = String(round(blueSlider.value * 100) / 100.0)
         
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .lightGray //фон приложения
     }
     
     func colorChange() {
