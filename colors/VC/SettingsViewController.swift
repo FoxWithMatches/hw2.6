@@ -57,6 +57,12 @@ class SettingsViewController: UIViewController {
         
         slidersChange()
         colorChange()
+        redTF.text = String(round(redSlider.value * 100) / 100.0)
+        greenTF.text = String(round(greenSlider.value * 100) / 100.0)
+        blueTF.text = String(round(blueSlider.value * 100) / 100.0)
+        currentRed.text = String(round(redSlider.value * 100) / 100.0)
+        currentGreen.text = String(round(greenSlider.value * 100) / 100.0)
+        currentBlue.text = String(round(blueSlider.value * 100) / 100.0)
     }
     
     @IBAction func changeRGB() {
