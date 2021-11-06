@@ -29,24 +29,14 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewColor.backgroundColor = colorView
-        
-        viewColor.backgroundColor = UIColor (red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
-        
+
         redSlider.tintColor = .red
         greenSlider.tintColor = .green
         blueSlider.tintColor = .blue
-        
-        currentRed.text = String(round(redSlider.value * 100) / 100.0)
-        currentGreen.text = String(round(greenSlider.value * 100) / 100.0)
-        currentBlue.text = String(round(blueSlider.value * 100) / 100.0)
-        
+                
         redTF.delegate = self
         greenTF.delegate = self
         blueTF.delegate = self
-        
-        redTF.text = String(round(redSlider.value * 100) / 100.0)
-        greenTF.text = String(round(greenSlider.value * 100) / 100.0)
-        blueTF.text = String(round(blueSlider.value * 100) / 100.0)
         
         viewColor.layer.cornerRadius = 10
         view.backgroundColor = .lightGray
@@ -102,7 +92,8 @@ extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let newValue = textField.text else { return }
         guard let numberValue = Float(newValue), numberValue <= 1 else {
-            showAlert(title: "Wrong format!", message: "Use type 'Float' and values from 0.0 to 0.99")
+            showAlert(title: "Wrong format!",
+                      message: "Use type 'Float' and values from 0.0 to 0.99")
             return }
         
         if textField == redTF {
@@ -129,7 +120,10 @@ extension SettingsViewController: UITextFieldDelegate {
 extension SettingsViewController {
     
     private func colorChange() {
-        viewColor.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        viewColor.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                            green: CGFloat(greenSlider.value),
+                                            blue: CGFloat(blueSlider.value),
+                                            alpha: 1)
     }
     private func slidersChange() {
         let ciColor = CIColor(color: colorView)
@@ -144,8 +138,13 @@ extension SettingsViewController {
         textField.inputAccessoryView = numberToolbar
         numberToolbar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(doneButtonAction))
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil,
+                                            action: nil)
         
         numberToolbar.items = [flexBarButton, doneButton]
     }
@@ -155,7 +154,9 @@ extension SettingsViewController {
     }
     
     private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)

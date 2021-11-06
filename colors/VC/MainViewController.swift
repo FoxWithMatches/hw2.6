@@ -14,7 +14,8 @@ protocol SettingsViewControllerDelegate: AnyObject {
 class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let settingsVC = segue.destination as? SettingsViewController else { return }
+        guard let settingsVC = segue.destination as? SettingsViewController
+        else { return }
         settingsVC.delegate = self
         settingsVC.colorView = view.backgroundColor
     }

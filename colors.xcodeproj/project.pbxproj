@@ -76,14 +76,30 @@
 		EA4257632722AC9500ADE63C /* colors */ = {
 			isa = PBXGroup;
 			children = (
-				EA4257642722AC9500ADE63C /* AppDelegate.swift */,
-				EA4257662722AC9500ADE63C /* SceneDelegate.swift */,
+				EA88F9742736EB13006D59DD /* Supports */,
 				EA3D26BC273539E1003C4D17 /* VC */,
 				EA3D26BD27353A16003C4D17 /* Storyboard */,
-				EA42576D2722AC9600ADE63C /* Assets.xcassets */,
-				EA4257722722AC9600ADE63C /* Info.plist */,
+				EA88F9752736EB88006D59DD /* Resources */,
 			);
 			path = colors;
+			sourceTree = "<group>";
+		};
+		EA88F9742736EB13006D59DD /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				EA4257722722AC9600ADE63C /* Info.plist */,
+				EA4257642722AC9500ADE63C /* AppDelegate.swift */,
+				EA4257662722AC9500ADE63C /* SceneDelegate.swift */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		EA88F9752736EB88006D59DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EA42576D2722AC9600ADE63C /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +256,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -295,6 +312,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -311,7 +329,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2V3Q6RCHJL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = colors/Info.plist;
+				INFOPLIST_FILE = colors/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -340,7 +358,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2V3Q6RCHJL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = colors/Info.plist;
+				INFOPLIST_FILE = colors/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
