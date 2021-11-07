@@ -47,9 +47,11 @@ class SettingsViewController: UIViewController {
         
         slidersChange()
         colorChange()
+        
         redTF.text = String(round(redSlider.value * 100) / 100.0)
         greenTF.text = String(round(greenSlider.value * 100) / 100.0)
         blueTF.text = String(round(blueSlider.value * 100) / 100.0)
+        
         currentRed.text = String(round(redSlider.value * 100) / 100.0)
         currentGreen.text = String(round(greenSlider.value * 100) / 100.0)
         currentBlue.text = String(round(blueSlider.value * 100) / 100.0)
@@ -86,7 +88,7 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -94,7 +96,8 @@ extension SettingsViewController: UITextFieldDelegate {
         guard let numberValue = Float(newValue), numberValue <= 1 else {
             showAlert(title: "Wrong format!",
                       message: "Use type 'Float' and values from 0.0 to 0.99")
-            return }
+            return
+        }
         
         if textField == redTF {
             redSlider.value = numberValue
@@ -109,11 +112,6 @@ extension SettingsViewController: UITextFieldDelegate {
         currentBlue.text = String(round(blueSlider.value * 100) / 100.0)
         
         colorChange()
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
 
